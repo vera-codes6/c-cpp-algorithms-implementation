@@ -89,7 +89,7 @@ class Graph {
 
 
 
-    
+
     /**
      *  this function performs the breadth first search on graph and return a
      *  mapping which maps the nodes to a boolean value representing whether the
@@ -112,6 +112,8 @@ class Graph {
 
         /// push the source vertex to queue to begin traversing
         tracker.push(src);
+
+        
         /// mark the source vertex as visited
         visited[src] = true;
         while (!tracker.empty()) {
