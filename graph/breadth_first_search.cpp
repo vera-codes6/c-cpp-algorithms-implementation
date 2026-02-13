@@ -118,7 +118,6 @@ class Graph {
             T node = tracker.front();
             /// remove the node from the queue
             tracker.pop();
-            
             for (T const &neighbour : adjacency_list[node]) {
                 /// check every vertex connected to the node which are still
                 /// unvisited
