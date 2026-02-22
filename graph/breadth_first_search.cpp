@@ -109,6 +109,7 @@ class Graph {
 
         /// push the source vertex to queue to begin traversing
         tracker.push(src);
+
         /// mark the source vertex as visited
         visited[src] = true;
         while (!tracker.empty()) {
