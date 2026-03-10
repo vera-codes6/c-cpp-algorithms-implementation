@@ -30,7 +30,9 @@ int prim(int x, const std::vector<std::vector<PII> > &graph) {
             }
         }
     }
+
     return minimum_cost;
+    
 }
 
 int main() {
