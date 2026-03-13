@@ -12,17 +12,21 @@ int prim(int x, const std::vector<std::vector<PII> > &graph) {
     int minimum_cost = 0;
 
     Q.push(std::make_pair(0, x));
+
     while (!Q.empty()) {
         // Select the edge with minimum weight
         PII p = Q.top();
         Q.pop();
         x = p.second;
+    
         // Checking for cycle
         if (marked[x] == true) {
             continue;
         }
+    
         minimum_cost += p.first;
         marked[x] = true;
+    
         for (const PII &neighbor : graph[x]) {
             int y = neighbor.second;
             if (marked[y] == false) {
@@ -32,7 +36,7 @@ int prim(int x, const std::vector<std::vector<PII> > &graph) {
     }
 
     return minimum_cost;
-    
+
 }
 
 int main() {
@@ -48,6 +52,7 @@ int main() {
     for (int i = 0; i < edges; ++i) {
         int x = 0, y = 0, weight = 0;
         std::cin >> x >> y >> weight;
+
         graph[x].push_back(std::make_pair(weight, y));
         graph[y].push_back(std::make_pair(weight, x));
     }
